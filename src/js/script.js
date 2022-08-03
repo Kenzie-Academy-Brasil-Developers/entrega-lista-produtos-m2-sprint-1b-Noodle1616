@@ -45,7 +45,7 @@ function adicionandoNaLista (listaDeProduto){
     listaDeProduto.forEach((produto) => { let card = criarCard(produto)
         valorTotal.push(produto.preco)
     lista.append(card)}) 
-    exibirValor(reduce())
+    exibirValor(valorTotal.reduce((a, b) => a + b))
     
 }
 adicionandoNaLista(produtos)
@@ -53,13 +53,13 @@ adicionandoNaLista(produtos)
 function filtrarElementos (produto){
     lista.innerHTML = ""
     valorTotal = []
-    const filtragem = produtos.filter ((elemento, index, arr) => {
+    const filtragem = produtos.filter ((elemento) => {
         
         if(elemento.secao === produto){
             let card = criarCard(elemento)
             
             valorTotal.push(elemento.preco)
-            exibirValor(reduce())
+            exibirValor(valorTotal.reduce((a, b) => a + b))
             return lista.append(card)
         }
     })
@@ -83,9 +83,9 @@ function filtroNome (listaDeProduto, nomeProduto){
     lista.innerHTML = ""
     valorTotal = []
     const produtoNome = listaDeProduto.filter ((elemento) => {
-        if(elemento.nome.includes(nomeProduto)){
+        if(elemento.nome.toLowerCase().includes(nomeProduto.toLowerCase())){
             valorTotal.push(elemento.preco)
-            exibirValor(reduce())
+            exibirValor(valorTotal.reduce((a, b) => a + b))
             let card = criarCard(elemento)
             return lista.append(card)
         }
@@ -94,24 +94,24 @@ function filtroNome (listaDeProduto, nomeProduto){
 }
 
 function atualizarValor (){
-   let precos = produtos.map((elemento, index, arr) => {
+   let precos = produtos.map((elemento) => {
     return elemento.preco
    })
    return precos
 }
 
-function callbackReduce (a , b){
-    return a + b
-}
+// function callbackReduce (a , b){
+//     return a + b
+// }
 
-function reduce (){
-const imprimir = valorTotal.reduce((elemento, index, arr) => {
-    for(let i = 0; i < valorTotal.length; i++){
-        return callbackReduce (elemento, index)
-    }
-})
-return imprimir
-}
+// function reduce (){
+// const imprimir = valorTotal.reduce((elemento, index,) => {
+//     for(let i = 0; i < valorTotal.length; i++){
+//         return callbackReduce (elemento, index)
+//     }
+// })
+// return imprimir
+// }
 
 function exibirValor (valor){
     valores.innerText = `R$ ${valor}`
