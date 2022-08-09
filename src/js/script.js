@@ -26,7 +26,7 @@ function criarCard (produto) {
     img.title           = nome
     h3.innerText        = nome
     span.innerText      = secao
-    p.innerText         = `$R ${preco}`
+    p.innerText         = `R$ ${preco}`
     button.innerText    = "Comprar"
     button.id           = id
     
