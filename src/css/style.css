@@ -22,7 +22,7 @@ margin: 0 70px;
 
 .filtersContainer {
 display: flex;
-justify-content: space-between;
+/* justify-content: space-between; */
 align-items: center;
 padding: 30px 0;
 }
@@ -133,10 +133,12 @@ width: 100%;
 .containerListaProdutos ul {
 list-style: none;
 display: flex;
+flex-direction: column;
 flex-wrap: wrap;
 justify-content: space-between;
 margin-top: 40px;
 width: 90%;
+background-color: rgb(161, 114, 52);
 }
 
 .containerListaProdutos ul li {

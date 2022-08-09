@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/style.css" />
+    <!-- <link rel="stylesheet" href="./src/css/style.css" /> -->
+    <link rel="stylesheet" href="./src/css/style2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fontawesome.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,13 +52,14 @@
           </button>
         </div>
       </section>
-      <section class="priceContainer">
+      <section class=" loja">
+      <!-- <section class="priceContainer">
         <div>
             <img src="./src/img/alert-circle.png" alt="exclamação de alerta">
             <p>Valor total dos produtos da sessão selecionada</p>
         </div>
         <span class="valorTotal">R$ 0.00</span>
-      </section>
+      </section> -->
       <!-- CONTAINER DE PRODUTOS -->
       <section class="containerVitrine">
         <div class="containerListaProdutos">
@@ -77,6 +79,39 @@
                 </ul>
         </div>
       </section>
+      <section class="carrinho">
+        
+          <header>
+            <img class="icone" src="./src/img/carrinho.png" alt="Carrinho de Compra">
+            <h2>Carrinho</h2>
+          </header>
+          <ul class="carrinho_list">
+            <!-- <li>
+              <img src="./src/img/maça.png" alt="Imagem maçã">
+              <div>
+              <h3>Maçã</h3>
+              <span>Hortifruti</span>
+              <p>R$ 2.00</p>
+              </div>
+              <button>X</button>
+            </li> -->
+            <!-- <div class="carrinho_vazio">
+              <img src="./src/img/Empty-Box-icon.png" alt="carrinho vazio" width="75px">
+              <p>Por enquanto não temos produtos no carrinho</p>
+            </div> -->
+          </ul>
+        <section class="info">
+          <div class="quantidade info_style">
+            <p> Quantidade </p>
+            <p class="quantidade_valor"> 0 </p>
+          </div>
+          <div class="info_style">
+            <p> Total</p>
+            <p class= "preco"> R$ 0,00</p>
+          </div>
+        </section>
+      </section>
+    </section>
     </main>
     <script src="./src/js/dataProdutos.js"></script>
     <script src="./src/js/script.js"></script>
