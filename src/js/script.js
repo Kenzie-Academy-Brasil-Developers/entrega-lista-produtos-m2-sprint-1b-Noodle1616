@@ -94,11 +94,24 @@ function filtrarNome (evento){
 
 function filtroNome (listaDeProduto, nomeProduto){
     lista.innerHTML = ""
-    valorTotal = []
+    // valorTotal = []
     const produtoNome = listaDeProduto.filter ((elemento) => {
         if(elemento.nome.toLowerCase().includes(nomeProduto.toLowerCase())){
             let card = criarCard(elemento)
             return lista.append(card)
+        }else if(elemento.secao.toLowerCase().includes(nomeProduto.toLowerCase())){
+            let card = criarCard(elemento)
+            return lista.append(card)
+        }else if(elemento.categoria.toLowerCase().includes(nomeProduto.toLowerCase())){
+            let card = criarCard(elemento)
+            return lista.append(card)
+        }else{
+            elemento.componentes.forEach(element => {
+                if(element.toLowerCase().includes(nomeProduto.toLowerCase())){
+                    let card = criarCard(elemento)
+                    return lista.append(card)
+                }
+            });
         }
     })
     return produtoNome
@@ -111,7 +124,6 @@ function atualizarValor (){
    return precos
 }
 
-let xxx = document.querySelector ('.xxx')
 function listaComponente (produto){
     let ol = document.createElement ('ol')
     produto.forEach((element, i) => {
@@ -196,7 +208,7 @@ function somarValor(){
     let quantidadeValor = 0
 
     for(let i = 0; i < listaDeCompras.length; i++){
-        total += Number(listaDeCompras[i].preco)
+        total += Number(listaDeCompras[i].preco.replace(',','.'))
         quantidadeValor += 1
     }
     quantidade.innerText = `${quantidadeValor}`
